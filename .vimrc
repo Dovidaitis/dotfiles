@@ -4,7 +4,7 @@ set number
 set background=dark
 
 
-filetype pluginon
+filetype plugin on
 
 set tabstop=4
 set expandtab
