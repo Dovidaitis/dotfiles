@@ -7,7 +7,7 @@ set background=dark
 filetype plugin on
 
 set tabstop=4
-set expandtab
+set shiftwidth=4
 " allow long lines to extend as far as line goes
 set nowrap
 
