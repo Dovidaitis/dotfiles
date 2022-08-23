@@ -1,5 +1,5 @@
 #!/usr/bin/bash
-	
+
 PACKAGES_TO_INSTALL=(
 	"git"
 	"bluez"
@@ -21,6 +21,7 @@ PACKAGES_TO_INSTALL=(
 	"which"
 	"net-tools"
 	"xdotool"	
+	"xclip"
 )
 
 # pacman -Qi <package_name> returns 0 if installed, 1 if not
@@ -32,6 +33,8 @@ check_package () {
 		pacman -S $1
 	fi
 }
+
+pacman -Syu
 
 for package in "${PACKAGES_TO_INSTALL[@]}"
 do
@@ -53,9 +56,7 @@ conf_zsh () {
 	clear
     sh -c "$(wget https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh -O -)"
 	git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
-	git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
-	cd ~
-	git clone https://github.com/Dovidaitis/dotfiles
+	git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions	
 	source ~/.zshrc
 }
 
