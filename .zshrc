@@ -104,3 +104,5 @@ source $ZSH/oh-my-zsh.sh
 if command -v tmux &> /dev/null && [ -n "$PS1" ] && [[ ! "$TERM" =~ screen ]] && [[ ! "$TERM" =~ tmux ]] && [ -z "$TMUX" ]; then
   exec tmux
 fi
+
+alias fileshare="python -m http.server"
