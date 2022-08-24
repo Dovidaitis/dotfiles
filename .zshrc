@@ -106,3 +106,5 @@ if command -v tmux &> /dev/null && [ -n "$PS1" ] && [[ ! "$TERM" =~ screen ]] &&
 fi
 
 alias fileshare="python -m http.server"
+alias locip="python -c 'import socket; print( socket.gethostbyname(socket.gethostname()))'"
+alias pubip="python ~/scripts/getip.py"
