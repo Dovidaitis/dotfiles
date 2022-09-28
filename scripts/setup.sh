@@ -22,6 +22,7 @@ PACKAGES_TO_INSTALL=(
 	"net-tools"
 	"xdotool"	
 	"xclip"
+	"btop"
 )
 
 # pacman -Qi <package_name> returns 0 if installed, 1 if not
