@@ -132,11 +132,10 @@ bar {
         mode invisible
 }
 
-new_window pixel 2
-
-hide_edge_borders vertical
-
-# Color variables
+#new_window pixel 2
+default_border none
+for_window [class="^.*"] border pixel 1 
+#Color variables
 set $unfocused_border #1D1F21
 set $focused_border #CC6666
 
@@ -162,6 +161,9 @@ exec_always --no-startup-id feh --bg-fill ~/Pictures/Wal/bg1.jpg
 # Execute polybar on launch. Script kills current ones on i3 refresh, otherwise they duplicate
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 
+# Apply esc remmaping to capslock
+exec_always --no-startup-id setxkbmap -option "caps:escape_shifted_capslock"
+ 
 # Pulse Audio controls
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +5% #increase sound volume
 bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -5% #decrease sound volume
@@ -178,3 +180,6 @@ bindsym Print exec flameshot gui
 
 #open search engine
 bindsym $mod+g exec google-chrome-stable
+
+#open signal
+bindsym $mod+m exec signal-desktop
