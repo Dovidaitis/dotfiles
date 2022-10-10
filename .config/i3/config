@@ -163,7 +163,9 @@ exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 
 # Apply esc remmaping to capslock
 exec_always --no-startup-id setxkbmap -option "caps:escape_shifted_capslock"
- 
+# source .profile
+exec_always --no-startup-id source ~/.profile 
+
 # Pulse Audio controls
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +5% #increase sound volume
 bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -5% #decrease sound volume
