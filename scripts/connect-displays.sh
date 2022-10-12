@@ -17,12 +17,15 @@ if $(xrandr | grep -wq "DP-2 connected"); then
 fi
 
 if $($DPI1_connected && $DPI2_connected); then
-	xrandr --output DP-1 --above eDP-1 --auto  --scale 0.75  
-	xrandr --output DP-2 --left-of  DP-1 --auto  --scale 0.75
+	echo "connecting both displays"
+	xrandr --output DP-1 --above eDP-1 --preferred  --scale 1  
+	xrandr --output DP-2 --left-of  DP-1 --preferred  --scale 1
 elif $DPI1_connected; then
-	xrandr --output "DP-1" --above "eDP-1" --auto
+	echo "connecting DPI-1"
+	xrandr --output "DP-1" --above "eDP-1" --preferred  --scale 1 
 elif $DPI2_connected; then
-	xrandr --output "DP-2" --above "eDP-1" --auto 
+	echo "connecting DPI-2"
+	xrandr --output "DP-2" --above "eDP-1" --preferred  --scale 1
 fi
 
 if $reaply_wallpaper; then
